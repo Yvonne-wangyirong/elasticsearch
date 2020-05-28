@@ -195,7 +195,11 @@ public class BinaryFieldMapper extends ParametrizedFieldMapper {
             // no doc values
             createFieldNamesField(context);
         }
+    }
 
+    @Override
+    protected Object parseSourceValue(Object value) {
+        return value;
     }
 
     @Override
