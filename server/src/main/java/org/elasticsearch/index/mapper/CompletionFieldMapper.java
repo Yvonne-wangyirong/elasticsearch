@@ -523,7 +523,11 @@ public class CompletionFieldMapper extends ParametrizedFieldMapper {
     }
 
     @Override
-    protected List<?> parseSourceValue(Object value) {
+    protected List<?> parseSourceValue(Object value, String format) {
+        if (format != null) {
+            throw new IllegalArgumentException("Field [" + name() + "] of type [" + typeName() + "] doesn't support formats.");
+        }
+
         if (value instanceof List) {
             return (List<?>) value;
         } else {

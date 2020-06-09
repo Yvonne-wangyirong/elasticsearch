@@ -173,8 +173,8 @@ public class ParametrizedMapperTests extends ESSingleNodeTestCase {
         }
 
         @Override
-        protected Object parseSourceValue(Object value) {
-            return value;
+        protected Object parseSourceValue(Object value, String format) {
+            return null;
         }
 
         @Override
